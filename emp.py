@@ -19,15 +19,21 @@ def wage_for_month():
             max_hour += daily_hours
             max_day += 1
             totalWage = max_hour * max_day * wage_per_hour
-            print(totalWage)
+            print("Employee is present")
+            print(f"wage:{totalWage}")
+            print(f"Hours:{max_hour}")
 
         elif attendence==2:
             max_hour += daily_hours + partTime_hours
             max_day+= 1
             totalWage = max_hour * max_day * wage_per_hour
-            print(totalWage)
+            print("Part time Employee")
+            print(f"wage:{totalWage}")
+            print(f"Hours:{max_hour}")
+        else:
+            print("Employee is absent")
 
-        # totalWage = wage_per_hour * daily_hours
+        
     return totalWage
 
 print(wage_for_month())
