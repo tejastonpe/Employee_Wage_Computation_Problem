@@ -5,15 +5,19 @@ wage_per_hour=20
 daily_hours=8
 partTime_hours=4
 
-match attendence:
-    case 1:
-        print("Emplpyee is present")
-        daily_Emp_wage= wage_per_hour * daily_hours
-        print(f"Employees Daily wage is: {daily_Emp_wage}")
-    case 2:
-        print("Part time employee")
-        PartTime_Emp_wage= wage_per_hour * partTime_hours
-        print(f"Part time Employees wage is: {PartTime_Emp_wage}")
-    case 0:
-        print("Employee is Absent")
-        
+
+def fullTime_emp_wage_forMonth(working_day):
+    wage_forMonth= working_day * (wage_per_hour * daily_hours)
+    return wage_forMonth
+
+def PartTime_emp_wage_forMonth(working_day):
+    PartTime_emp_wage= working_day * (wage_per_hour * partTime_hours)
+    return PartTime_emp_wage
+
+print(fullTime_emp_wage_forMonth(20))
+
+print(PartTime_emp_wage_forMonth(20))
+
+
+
+
