@@ -13,22 +13,27 @@ max_day = 0
 def wage_for_month():
     global max_hour
     global max_day
+
     while (max_hour <= total_hours or max_day <= total_days):
         attendence = random.randint(0,2)
         if attendence==1:
             max_hour += daily_hours
             max_day += 1
+            dailyWage = daily_hours * max_day * wage_per_hour
             totalWage = max_hour * max_day * wage_per_hour
             print("Employee is present")
-            print(f"wage:{totalWage}")
+            print(f"Daily wage:{dailyWage}")
+            print(f"Total wage:{totalWage}")
             print(f"Hours:{max_hour}")
 
         elif attendence==2:
             max_hour += daily_hours + partTime_hours
-            max_day+= 1
+            max_day+= 1 
+            dailyWage = daily_hours * max_day * wage_per_hour           
             totalWage = max_hour * max_day * wage_per_hour
             print("Part time Employee")
-            print(f"wage:{totalWage}")
+            print(f"Daily wage:{dailyWage}")
+            print(f"Total wage:{totalWage}")
             print(f"Hours:{max_hour}")
         else:
             print("Employee is absent")
